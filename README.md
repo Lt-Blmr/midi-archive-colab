@@ -9,8 +9,25 @@ This repo helps you organize, sort, and clean your MIDI files for use in AI trai
 - JSON export for downstream machine learning
 
 ## How to Use
-1. Upload MIDI files to `data/input_midi`
-2. Run one of the notebooks in the `notebooks/` folder
-3. Sorted output is written to `data/sorted_output`
 
-Coming soon: Genre classifiers and MIDI visualizers!
+1. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Place your MIDI files into `data/input_midi`
+
+3. Run the pipeline:
+
+   ```bash
+   python main.py --dedup       # deduplicate MIDI files
+   python main.py --enrich      # enrich metadata (Spotify)
+   python main.py --analyze     # analyze musical features
+   python main.py --dedup --enrich --analyze   # run all steps
+   ```
+
+4. Results:
+
+   - Duplicates moved to `data/input_midi/trash`, logs under `data/input_midi/logs`
+   - Enriched metadata and analysis stored alongside JSON logs
