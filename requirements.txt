@@ -1,0 +1,5 @@
+mido
+pretty_midi
+tqdm
+requests
+python-dotenv
