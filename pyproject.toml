@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "midi-archive-colab"
+version = "0.1.0"
+description = "Modular MIDI archive and enrichment pipeline"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+mido = "*"
+pretty_midi = "*"
+tqdm = "*"
+requests = "*"
+python-dotenv = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+black = "*"
+isort = "*"
+flake8 = "*"
+mypy = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

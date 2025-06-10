@@ -3,18 +3,19 @@
 CLI entrypoint for MIDI Archive processing.
 """
 import argparse
-from scripts.dedup import deduplicate_midi_keep_unique
 
-# Optional imports; ensure these modules exist or implement them.
+# Update imports to use correct module paths and add stubs for missing imports
 try:
-    from scripts.spotify_enrichment import enrich_with_spotify
+    from src.midi.spotify_enrichment import enrich_with_spotify
 except ImportError:
     enrich_with_spotify = None
 
 try:
-    from scripts.midi_analysis import analyze_midi
+    from src.midi.midi_analysis import analyze_midi
 except ImportError:
     analyze_midi = None
+
+from src.midi.dedup import deduplicate_midi_keep_unique
 
 
 def main():

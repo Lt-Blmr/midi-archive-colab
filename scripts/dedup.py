@@ -5,6 +5,8 @@ from pathlib import Path
 from mido import MidiFile
 from tqdm import tqdm
 from shutil import move
+# Fix import and usage of deduplicate_midi_keep_unique
+from src.midi.dedup import deduplicate_midi_keep_unique
 
 def get_midi_hash(file_path):
     """Generate a hash based on MIDI note events (ignores file name)."""
@@ -75,3 +77,6 @@ def deduplicate_midi_keep_unique(midi_root_path):
     print(f"\nDone. Scanned: {len(all_midi_files)} files")
     print(f"Unique: {len(seen_hashes)} | Duplicates moved: {len(duplicate_log)}")
     print(f"Logs stored in: {json_output_dir}")
+
+# Call with correct argument name
+# deduplicate_midi_keep_unique(midi_root_path)
